@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +37,8 @@ public class JavaScriptFrameworkController {
 		this.repository = repository;
 	}
 
+
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/frameworks")
 	public Iterable<JavaScriptFramework> frameworks(
 		@RequestParam(value="name", required=false) String name,
